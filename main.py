@@ -14,4 +14,3 @@ if __name__ == '__main__':
     agent.actuators["mover"].act(direction=MoveDirection.LEFT)
     agent.print_state()
 
-#holas

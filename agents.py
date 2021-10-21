@@ -1,6 +1,5 @@
 from abc import ABCMeta, abstractmethod
 import uuid
-#prueba2
 class Sensor(metaclass=ABCMeta):
 
     @abstractmethod
