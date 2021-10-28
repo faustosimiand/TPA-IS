@@ -1,9 +1,9 @@
 from abc import ABCMeta
 
 
-class presentacion (metaclass=ABCMeta):
+class ui (metaclass=ABCMeta):
 
-    def presentacion1(): #muestra la primer pantalla
+    def inicio(): #muestra la primer pantalla
         print("--------------------------------------")
         print("-                                    -")
         print("-                                    -")

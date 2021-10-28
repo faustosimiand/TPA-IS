@@ -1,36 +1,49 @@
-import random
+from operator import truediv
+from random import randint
 import time
 import os
-from presentaciones import presentacion
-from carta import cartas
-from random import randrange
+from presentaciones import ui 
+from carta import cartas #esto tiene mostrar carta y jugarCarta
+from ordenador import ordenador #esto tiene ordenador_jugar
 
-def jugarCarta(ucartas): 
-    cartajugada = input("carta a jugar: ") 
-    while cartajugada not in ucartas:
-        if cartajugada not in ucartas:
-            cartajugada = input("Elige una carta que tengas :")
-        return cartajugada       
-    #eliminar la carta jugada
 
-def ordenador(cartajugada,ocartas):
-    cartaordenador:int
-    if ocartas(1)>cartajugada:
-        cartaordenador=ocartas(1)
-    elif ocartas(2)>cartajugada:
-        cartaordenador=ocartas(2)
-    elif ocartas(3)>cartajugada:
-        cartaordenador=ocartas(3)                
+ui.inicio()
+ucartas=[randint(1,14),randint(1,14),randint(1,14)]
+ocartas=[randint(1,14),randint(1,14),randint(1,14)]
+cartas.ajugar(ucartas[0])
+cartas.ajugar(ucartas[1])
+cartas.ajugar(ucartas[2])
+contadoruser=1
+contadorordenador=1
+ganador=0 #1 si es user,2 si es ordenador
+jugando=True
+while jugando==True:
+    if contadoruser==2:
+        jugando=False
+        ganador=1
+    elif contadorordenador==2:
+        jugando=False
+        ganador=2
     else:
-        cartaordenador=random(ocartas)
-    return cartaordenador  
-    #eliminar la carta jugada
+        cartajugada=cartas.jugarCarta(ucartas)
+        cartas.mostrarcarta(cartajugada)
+        cartaordenador=ordenador.ordenador_jugar(cartajugada,ocartas)
+        if cartajugada>cartaordenador:
+            contadoruser+=1
+            print("Ganaste esta mano")
+        elif cartaordenador>cartajugada:
+            contadorordenador+=1
+            print("la maquina gana esta mano")
+        else:  
+            contadorordenador+=1
+            contadoruser+=1
+            print("Empate")
+ui.mostrarganador(ganador)
 
 
-#en el main hay que hacer un random para las 3 cartas y mostrarlas
-#asignar dos contadores para user y para pc
-#definir ganador (1 si es user, 2 si es pc)
-#hacer un while con un boolean 
+
+
+
 #hacer un if considerando los contadores para jugar las 3 veces
 #llamar a jugar carta pasando como parametro las cartas y mostrar la carta jugada
 #llamar a ordenador y pasarle la carta jugada y mostrar la carta jugada
