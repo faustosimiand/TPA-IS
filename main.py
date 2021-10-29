@@ -8,8 +8,8 @@ from ordenador import ordenador #esto tiene ordenador_jugar
 
 
 ui.inicio()
-ucartas=[randint(1,14),randint(1,14),randint(1,14)]
-ocartas=[randint(1,14),randint(1,14),randint(1,14)]
+ucartas=[10,randint(1,14),randint(1,14)]
+ocartas=[3,10,randint(1,14)]
 cartas.ajugar(ucartas[0])
 cartas.ajugar(ucartas[1])
 cartas.ajugar(ucartas[2])
@@ -25,9 +25,9 @@ while jugando==True:
         jugando=False
         ganador=2
     else:
-        cartajugada=cartas.jugarCarta(ucartas)
+        cartajugada=cartas.jugarCarta(ucartas) 
         cartas.mostrarcarta(cartajugada)
-        cartaordenador=ordenador.ordenador_jugar(cartajugada,ocartas)
+        cartaordenador=ordenador.ordenador_jugar(cartajugada,ocartas) #probar con rich comparison
         if cartajugada>cartaordenador:
             contadoruser+=1
             print("Ganaste esta mano")
