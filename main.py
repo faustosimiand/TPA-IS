@@ -1,10 +1,8 @@
 from operator import truediv
 from random import randint
-import time
-import os
 from presentaciones import ui 
-from carta import cartas #esto tiene mostrar carta y jugarCarta
-from ordenador import ordenador #esto tiene ordenador_jugar
+from carta import cartas 
+from ordenador import ordenador 
 
 
 ui.inicio()
