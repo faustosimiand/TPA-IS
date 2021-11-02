@@ -21,24 +21,25 @@ class truco (metaclass=ABCMeta):
                 ganador=2
             else:             
                 truco.mostrarmano(ucartas)
-                cartajugada=truco.jugarCarta(ucartas)
-                print("Jugaste: ")
-                cartas.mostrarcarta(cartajugada)
+                cartajugada=truco.jugarCarta(ucartas)                              
                 ucartas=truco.eliminarcarta(ucartas,cartajugada)
                 cartaordenador=ordenador.ordenador_jugar(ocartas,cartajugada) 
                 ocartas=truco.eliminarcarta(ocartas,cartaordenador)      
-                print("el ordenador jugo: ")
+                print("Jugaste "+cartas.mostrarcarta(cartajugada)+" y el ordenador jugo "+cartas.mostrarcarta(cartaordenador))
                 cartas.mostrarcarta(cartaordenador)
                 if cartajugada>cartaordenador:
                     contadoruser+=1
                     print("Ganaste esta mano")
+                    print("")
                 elif cartaordenador>cartajugada:
                     contadorordenador+=1
                     print("la maquina gana esta mano")
+                    print("")
                 else:  
                     contadorordenador+=1
                     contadoruser+=1
                     print("Mano empatada")
+                    print("")
         return ganador 
 
     #Muestra las cartas disponibles
