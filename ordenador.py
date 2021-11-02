@@ -1,5 +1,4 @@
 from abc import ABCMeta
-from random import randint
 
 class ordenador (metaclass=ABCMeta): 
     def ordenador_jugar(ocartas,cartajugada):  
