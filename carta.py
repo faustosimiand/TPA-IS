@@ -33,29 +33,7 @@ class cartas (metaclass=ABCMeta):
             elif carta == 14:
                 print("pulse 14 para jugar 1 de espada")
         
-        def mostrarmano(ucartas):
-            for carta in ucartas:
-                cartas.ajugar(carta)
-
-        
-        def jugarCarta(ucartas): 
-            cartajugada = int(input("carta a jugar: ")) 
-            while cartajugada not in ucartas:
-                if cartajugada not in ucartas:
-                    cartajugada = int(input("Elige una carta que tengas :"))
-            return cartajugada              
-            
-        
-        def eliminarcarta(ucartas,cartajugada):
-            if cartajugada==ucartas[0]: 
-                ucartas.pop(0)                
-                return ucartas
-            if cartajugada==ucartas[1]:
-                ucartas.pop(1)             
-                return ucartas
-            if cartajugada==ucartas[2]: 
-                ucartas.pop(2)              
-                return ucartas
+     
 
         def mostrarcarta(carta):
             if carta == 1:
