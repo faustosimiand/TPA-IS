@@ -1,7 +1,7 @@
 import unittest
 from ordenador import ordenador
 from truco import truco
-
+from carta import cartas
 
 class TestOperaciones(unittest.TestCase):  
     #probamos si el ordenador devuelve la carta para ganar 
@@ -26,6 +26,13 @@ class TestOperaciones(unittest.TestCase):
         cartajugada=3
         esperado=14
         actual=truco.cartaajugar(cartajugada,cartas)
+        self.assertEqual(actual,esperado)
+
+    #probamos si el metodo muestra la carta que le pasamos
+    def test_mostrarCarta(self):
+        carta=14
+        esperado="1 de espada"
+        actual=cartas.mostrarcarta(carta)
         self.assertEqual(actual,esperado)
         
 if __name__ == '__main__':
