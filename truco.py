@@ -56,18 +56,20 @@ class truco (metaclass=ABCMeta):
     def jugarCarta(ucartas):
         bool=False 
         cartajugada = int(input("carta a jugar: ")) 
+        max=len(ucartas)        
         while bool==False:
-            if cartajugada==1:
+            if cartajugada>max:
+               cartajugada = int(input("Ingrese un numero disponible: "))
+            elif cartajugada==1:
                 bool=True   
                 return cartajugada
-            if cartajugada==2:
+            elif cartajugada==2:
                 bool=True   
                 return cartajugada  
-            if cartajugada==3:
+            elif cartajugada==3:
                 bool=True   
                 return cartajugada
-            else:
-                cartajugada = int(input("Ingrese 1,2 o 3: "))
+     
 
                         
             
