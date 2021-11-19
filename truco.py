@@ -7,9 +7,9 @@ from abc import ABCMeta
 class truco (metaclass=ABCMeta):
     def jugar():
         listacartas=(1,1,1,1,2,2,2,2,3,3,3,3,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,9,9,9,9,10,10,10,10,11,12,13,14)
-        maso=random.sample(listacartas,6)
-        ucartas=[maso[0],maso[1],maso[2]]
-        ocartas=[maso[3],maso[4],maso[5]]
+        mazo=random.sample(listacartas,6)
+        ucartas=[mazo[0],mazo[1],mazo[2]]
+        ocartas=[mazo[3],mazo[4],mazo[5]]
         contadoruser=0
         contadorordenador=0
         ganador=0 #1 si es user,2 si es ordenador
@@ -32,16 +32,16 @@ class truco (metaclass=ABCMeta):
                 cartas.mostrarcarta(cartaordenador)
                 if cartajugada>cartaordenador:
                     contadoruser+=1
-                    print("Ganaste esta mano")
+                    print("Ganaste esta ronda")
                     print("")
                 elif cartaordenador>cartajugada:
                     contadorordenador+=1
-                    print("la maquina gana esta mano")
+                    print("la maquina gana esta ronda")
                     print("")
                 else:  
                     contadorordenador+=1
                     contadoruser+=1
-                    print("Mano empatada")
+                    print("ronda empatada")
                     print("")
         return ganador 
 
