@@ -20,7 +20,7 @@ class TestOperaciones(unittest.TestCase):
         actual=truco.eliminarcarta(cartas,carta)
         self.assertEqual(actual,esperado)
 
-    #probamos si el metodo para jugar la carta indicada por el usuario
+    #probamos si el metodo para jugar juega la carta indicada por el usuario
     def test_cartaajugar(self):
         cartas=[1,2,14]
         cartajugada=3
